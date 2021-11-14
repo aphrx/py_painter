@@ -10,3 +10,5 @@ To execute the project, run:
 pip install -r requirements.txt
 python script.py
 ```
+
+If there are any issues, reach out to the discord: https://discord.gg/nTRJ6emeeS
