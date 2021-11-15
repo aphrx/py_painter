@@ -81,8 +81,8 @@ if __name__ == "__main__":
     y = 170
     bw_img = load_bw_img("ksi.jpg")
     # img = cv2.imread("ksi2.jpg", cv2.IMREAD_UNCHANGED)
-    while True:
-        print(pyautogui.position()) # Uncomment this to find coordinates
+    # while True:
+    #     print(pyautogui.position()) # Uncomment this to find coordinates
 
     #draw_slow(bw_img, x, y)
     draw_faster(bw_img, x, y)
