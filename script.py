@@ -4,7 +4,8 @@ import pyautogui
 def load_bw_img(filename):
     original = cv2.imread(filename)
     grayImage = cv2.cvtColor(original, cv2.COLOR_BGR2GRAY)
-    _ ,blackAndWhiteImage = cv2.threshold(grayImage, 127, 255, cv2.THRESH_BINARY)
+    _ ,blackAndWhiteImage = cv2.threshold(grayImage, 85, 255, cv2.THRESH_BINARY)
+    #cv2.imshow("viewer", grayImage)
     return blackAndWhiteImage
 
 # Pixel by Pixel B/W
@@ -31,7 +32,7 @@ def draw_color(img, x_coord, y_coord):
         for i in col:
             b, g, r = (i)
             x += 1
-            if last_color != [r, g, b] or last_color == None:
+            if last_color == None or [last_color[0]//10, last_color[1]//10, last_color[2]//10] != [r//10, g//10, b//10]:
                 last_color = [r, g, b]
                 change_color(r, g, b)
             if [r, g, b] != [255, 255, 255]:
@@ -79,11 +80,12 @@ def change_color(r, g, b):
 if __name__ == "__main__":
     x = 30 # Change depending on X/Y coordinates of your machine for where to start drawing
     y = 170
-    bw_img = load_bw_img("ksi.jpg")
-    # img = cv2.imread("ksi2.jpg", cv2.IMREAD_UNCHANGED)
-    while True:
-        print(pyautogui.position()) # Uncomment this to find coordinates
+    #bw_img = load_bw_img("baldski.jpg")
+    img = cv2.imread("baldski.jpg", cv2.IMREAD_UNCHANGED)
+    
+	# while True:
+	#       print(pyautogui.position()) # Uncomment this to find coordinates
 
     #draw_slow(bw_img, x, y)
-    draw_faster(bw_img, x, y)
-    # draw_color(img, x, y)
+    #draw_faster(bw_img, x, y)
+    draw_color(img, x, y)
