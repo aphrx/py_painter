@@ -12,3 +12,5 @@ python script.py
 ```
 
 If there are any issues, reach out to the discord: https://discord.gg/nTRJ6emeeS
+
+P.S. During execution, the script will have control of the mouse. To force the script to end, force your cursor to the top-right corner of the screen.
